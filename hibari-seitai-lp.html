@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ひばり整体院｜つらい腰痛・肩こり、我慢しないでください</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1E3A50;
+  --navy-deep:#152B3C;
+  --amber:#E8A33D;
+  --amber-deep:#C9861F;
+  --base:#F5F7F8;
+  --white:#FFFFFF;
+  --text:#26313A;
+  --muted:#5E6B76;
+  --line:#DDE4E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--text);background:var(--base);
+  line-height:1.9;font-size:15px;letter-spacing:.03em;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+.disp{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900}
+
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 20px;background:var(--white);
+  border-bottom:3px solid var(--navy);
+}
+.logo{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:18px;color:var(--navy);letter-spacing:.06em}
+.logo small{display:block;font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.14em}
+.header-tel{text-align:right;font-size:11px;color:var(--muted);line-height:1.5}
+.header-tel b{display:block;font-size:15px;color:var(--navy);letter-spacing:.04em}
+
+/* hero */
+.hero{
+  padding:108px 0 46px;
+  background:
+    linear-gradient(rgba(21,43,60,.86),rgba(21,43,60,.86)),
+    repeating-linear-gradient(45deg,#20455E 0 12px,#1E3A50 12px 24px);
+  color:var(--white);
+}
+.hero .badge{
+  display:inline-block;background:var(--amber);color:var(--navy-deep);
+  font-size:12px;font-weight:700;padding:5px 14px;border-radius:99px;
+  letter-spacing:.08em;margin-bottom:16px;
+}
+.hero h1{
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;
+  font-size:clamp(26px,6.4vw,40px);line-height:1.5;letter-spacing:.05em;
+  margin-bottom:14px;
+}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lead{font-size:14px;color:#C9D4DC;max-width:34em}
+
+/* symptom selector = signature */
+.symptom-box{
+  margin-top:26px;background:var(--white);border-radius:10px;
+  padding:20px 18px;color:var(--text);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.symptom-box p{
+  font-size:13px;font-weight:700;color:var(--navy);
+  margin-bottom:12px;letter-spacing:.06em;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  border:1.5px solid var(--navy);color:var(--navy);
+  font-size:13px;font-weight:700;padding:9px 16px;border-radius:99px;
+  background:var(--white);transition:background .2s,color .2s;
+}
+.chip:hover{background:var(--navy);color:#fff}
+.chip:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* section base */
+section{padding:64px 0}
+.eyebrow{
+  display:inline-block;background:var(--navy);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.22em;
+  padding:4px 12px;margin-bottom:14px;
+}
+h2{
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;
+  font-size:clamp(21px,4.6vw,28px);color:var(--navy);
+  letter-spacing:.05em;margin-bottom:26px;line-height:1.5;
+}
+
+/* symptoms */
+.symptom-card{
+  background:var(--white);border:1px solid var(--line);border-radius:10px;
+  padding:24px 20px;margin-bottom:16px;scroll-margin-top:90px;
+}
+.symptom-card h3{
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;
+  font-size:17px;color:var(--navy);margin-bottom:8px;
+  display:flex;align-items:center;gap:10px;
+}
+.symptom-card h3::before{
+  content:"";width:8px;height:22px;background:var(--amber);border-radius:2px;
+}
+.symptom-card p{font-size:13.5px;color:var(--muted)}
+.symptom-card .approach{
+  margin-top:12px;background:var(--base);border-radius:8px;
+  padding:12px 14px;font-size:13px;color:var(--text);
+}
+.symptom-card .approach b{color:var(--navy)}
+
+/* reasons */
+.reasons{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.reason-grid{display:grid;gap:16px}
+@media(min-width:720px){.reason-grid{grid-template-columns:repeat(3,1fr)}}
+.reason{
+  border:2px solid var(--navy);border-radius:10px;padding:22px 18px;
+  position:relative;
+}
+.reason .tag{
+  position:absolute;top:-13px;left:16px;background:var(--amber);
+  color:var(--navy-deep);font-size:11px;font-weight:900;
+  padding:3px 12px;border-radius:99px;letter-spacing:.1em;
+}
+.reason h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.6}
+.reason p{font-size:13px;color:var(--muted)}
+
+/* price */
+.price-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.price-table th,.price-table td{padding:16px 14px;text-align:left;font-size:14px;border-bottom:1px solid var(--line)}
+.price-table thead th{background:var(--navy);color:#fff;font-size:13px;letter-spacing:.08em}
+.price-table td.p{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;color:var(--navy);white-space:nowrap}
+.price-table tr.first td{background:#FFF6E5}
+.price-note{font-size:12px;color:var(--muted);margin-top:12px}
+
+/* voice */
+.voice{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.voice-card{
+  background:var(--base);border-radius:10px;padding:20px 18px;margin-bottom:14px;
+}
+.voice-card .meta{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.voice-card p{font-size:13.5px;color:var(--text)}
+.voice-note{font-size:11px;color:var(--muted);margin-top:8px}
+
+/* flow */
+.flow{counter-reset:n}
+.flow-item{
+  background:var(--white);border:1px solid var(--line);border-radius:10px;
+  padding:18px 18px 18px 64px;margin-bottom:12px;position:relative;
+}
+.flow-item::before{
+  counter-increment:n;content:counter(n);
+  position:absolute;left:16px;top:18px;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+}
+.flow-item h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.flow-item p{font-size:13px;color:var(--muted)}
+
+/* director */
+.director-flex{display:flex;gap:26px;flex-direction:column}
+@media(min-width:720px){.director-flex{flex-direction:row}}
+.director-photo{
+  width:160px;height:190px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(180deg,#B9C6CF,#7E93A3);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:11px;letter-spacing:.2em;
+}
+.director h3{font-size:18px;font-weight:900;font-family:'Zen Kaku Gothic New',sans-serif;color:var(--navy)}
+.director .title{font-size:12px;color:var(--amber-deep);font-weight:700;margin-bottom:12px}
+.director p{font-size:13.5px;color:var(--text)}
+
+/* faq */
+details{background:var(--white);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+summary{
+  cursor:pointer;list-style:none;padding:16px 44px 16px 18px;
+  font-size:14px;font-weight:700;color:var(--navy);position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"＋";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  color:var(--amber-deep);font-weight:900;
+}
+details[open] summary::after{content:"−"}
+details p{padding:0 18px 16px;font-size:13px;color:var(--muted)}
+summary:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);border-radius:10px;overflow:hidden}
+.info-table th,.info-table td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info-table th{width:100px;color:var(--navy);font-weight:700;white-space:nowrap;background:#EEF2F4}
+.map-box{margin-top:18px;height:190px;background:#DFE6EA;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);letter-spacing:.2em}
+
+/* cta */
+.cta{
+  background:var(--navy-deep);color:#fff;text-align:center;padding:70px 20px;
+}
+.cta h2{color:#fff}
+.cta .lead{font-size:14px;color:#C9D4DC;margin-bottom:28px}
+.cta-btn{
+  display:inline-block;background:var(--amber);color:var(--navy-deep);
+  font-weight:900;font-size:16px;letter-spacing:.08em;
+  padding:17px 44px;border-radius:99px;
+  box-shadow:0 6px 0 var(--amber-deep);transition:transform .15s,box-shadow .15s;
+}
+.cta-btn:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--amber-deep)}
+.cta-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cta .tel{margin-top:24px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:24px;letter-spacing:.05em}
+.cta .tel small{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:11px;color:#9FB0BC}
+
+/* fixed cta */
+.fixed-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;display:flex;box-shadow:0 -4px 14px rgba(0,0,0,.15)}
+.fixed-cta a{flex:1;text-align:center;padding:15px 8px;font-size:13.5px;font-weight:900;letter-spacing:.08em}
+.fixed-cta .tel-a{background:var(--navy);color:#fff}
+.fixed-cta .web-a{background:var(--amber);color:var(--navy-deep)}
+@media(min-width:720px){.fixed-cta{display:none}}
+
+footer{background:var(--navy-deep);color:#8FA2B0;font-size:11px;text-align:center;padding:24px 20px 92px;letter-spacing:.1em}
+@media(min-width:720px){footer{padding-bottom:24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ひばり整体院<small>HIBARI SEITAI</small></div>
+  <div class="header-tel">ご予約・お問い合わせ<b>00-0000-0000</b></div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">○○駅 徒歩3分｜平日21時まで営業</span>
+    <h1>その腰痛・肩こり、<br><em>「歳のせい」</em>で<br>あきらめていませんか。</h1>
+    <p class="lead">ひばり整体院は、痛みが出ている場所だけでなく、姿勢や身体の使い方まで含めて原因を探し、再発しにくい身体づくりを一緒に目指す整体院です。</p>
+    <div class="symptom-box">
+      <p>▼ いま、どこがつらいですか？（タップで詳細へ）</p>
+      <div class="chips">
+        <a class="chip" href="#s-koshi">腰痛・ぎっくり腰</a>
+        <a class="chip" href="#s-kata">肩こり・首の痛み</a>
+        <a class="chip" href="#s-zutsu">頭痛・眼精疲労</a>
+        <a class="chip" href="#s-shisei">猫背・姿勢の乱れ</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">SYMPTOMS</span>
+    <h2>症状別のアプローチ</h2>
+
+    <div class="symptom-card" id="s-koshi">
+      <h3>腰痛・ぎっくり腰</h3>
+      <p>長時間のデスクワークや立ち仕事、繰り返すぎっくり腰。湿布や揉みほぐしでその場をしのいでも、すぐ戻ってしまう方が多くいらっしゃいます。</p>
+      <div class="approach"><b>当院の考え方：</b>腰そのものだけでなく、股関節や骨盤まわりの動き、日常の姿勢のクセを確認し、腰に負担が集中しにくい身体の使い方まで含めてサポートします。</div>
+    </div>
+
+    <div class="symptom-card" id="s-kata">
+      <h3>肩こり・首の痛み</h3>
+      <p>スマホやPC作業で頭が前に出た姿勢が続くと、首や肩の筋肉に大きな負担がかかります。マッサージ直後は楽でも、数日で戻る場合は姿勢側に原因が隠れていることも。</p>
+      <div class="approach"><b>当院の考え方：</b>首・肩だけでなく、背中や肩甲骨まわりの動きをチェック。デスク環境や座り方のアドバイスもあわせて行います。</div>
+    </div>
+
+    <div class="symptom-card" id="s-zutsu">
+      <h3>頭痛・眼精疲労</h3>
+      <p>首や肩の緊張にともなう頭の重さ・目の疲れにお悩みの方向けのケアです。※強い頭痛や急な症状は、まず医療機関の受診をおすすめします。</p>
+      <div class="approach"><b>当院の考え方：</b>首まわりの緊張をやわらげる施術に加え、セルフケアの方法もお伝えし、つらさが出にくい状態を目指します。</div>
+    </div>
+
+    <div class="symptom-card" id="s-shisei">
+      <h3>猫背・姿勢の乱れ</h3>
+      <p>「姿勢が悪いと言われる」「写真に写った自分の背中が気になる」。姿勢のクセは、肩こりや腰痛の背景になっていることも少なくありません。</p>
+      <div class="approach"><b>当院の考え方：</b>姿勢チェックで現状を確認し、施術と自宅でできる簡単なエクササイズを組み合わせて、無理なく続けられるプランをご提案します。</div>
+    </div>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <span class="eyebrow">REASONS</span>
+    <h2>ひばり整体院が選ばれる3つの理由</h2>
+    <div class="reason-grid">
+      <div class="reason">
+        <span class="tag">理由 1</span>
+        <h3>原因の説明に、時間をかけます</h3>
+        <p>初回は約60分。検査と問診で身体の状態を確認し、「なぜつらいのか」「どんな計画で通うのか」を分かりやすくご説明します。</p>
+      </div>
+      <div class="reason">
+        <span class="tag">理由 2</span>
+        <h3>バキバキしない、やさしい施術</h3>
+        <p>強く鳴らすような施術は行いません。お身体の状態に合わせた無理のない施術なので、整体が初めての方やご年配の方も安心です。</p>
+      </div>
+      <div class="reason">
+        <span class="tag">理由 3</span>
+        <h3>通いやすさも、続けやすさのうち</h3>
+        <p>駅から徒歩3分、平日は21時まで営業。お仕事帰りにも通いやすく、完全予約制で待ち時間もほとんどありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">PRICE</span>
+    <h2>料金のご案内</h2>
+    <table class="price-table">
+      <thead>
+        <tr><th>メニュー</th><th>内容</th><th>料金（税込）</th></tr>
+      </thead>
+      <tbody>
+        <tr class="first">
+          <td><b>初回体験</b></td>
+          <td>カウンセリング＋検査＋施術（約60分）</td>
+          <td class="p">3,980円</td>
+        </tr>
+        <tr>
+          <td>整体コース</td>
+          <td>施術＋セルフケア指導（約40分）</td>
+          <td class="p">6,600円</td>
+        </tr>
+        <tr>
+          <td>回数券（5回）</td>
+          <td>継続ケアの方向け・有効期限6ヶ月</td>
+          <td class="p">29,700円</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="price-note">※表示はすべて税込です。追加料金や物品販売の押し売りは一切ありません。</p>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <span class="eyebrow">VOICE</span>
+    <h2>ご利用者さまの声</h2>
+    <div class="voice-card">
+      <p class="meta">40代・女性・デスクワーク（腰痛）</p>
+      <p>何年も付き合ってきた腰の重さについて、原因を図で説明してもらえたのが初めてで納得できました。教わったストレッチも簡単で続けられています。</p>
+    </div>
+    <div class="voice-card">
+      <p class="meta">30代・男性・営業職（肩こり・頭痛）</p>
+      <p>バキバキされるのが怖くて敬遠していましたが、想像以上にやさしい施術でした。仕事帰りに通える時間まで開いているのが助かります。</p>
+    </div>
+    <p class="voice-note">※個人の感想であり、効果を保証するものではありません。（本サイトはポートフォリオ用の架空サイトです）</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">FLOW</span>
+    <h2>初回来院の流れ</h2>
+    <div class="flow">
+      <div class="flow-item">
+        <h3>ご予約</h3>
+        <p>Web予約・LINE・お電話からご都合のよい日時をお選びください。</p>
+      </div>
+      <div class="flow-item">
+        <h3>カウンセリング・検査</h3>
+        <p>問診票をもとに、つらさの経緯や生活習慣をうかがい、姿勢・動きのチェックを行います。</p>
+      </div>
+      <div class="flow-item">
+        <h3>ご説明・施術</h3>
+        <p>身体の状態と施術方針をご説明し、ご納得いただいてから施術に入ります。</p>
+      </div>
+      <div class="flow-item">
+        <h3>今後のプランのご提案</h3>
+        <p>状態に合わせた通院ペースとセルフケアをご提案します。継続を無理におすすめすることはありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voice" style="background:var(--white)">
+  <div class="wrap">
+    <span class="eyebrow">STAFF</span>
+    <h2>院長のごあいさつ</h2>
+    <div class="director-flex">
+      <div class="director-photo">院長写真</div>
+      <div class="director">
+        <h3>雲雀 悠人</h3>
+        <p class="title">ひばり整体院 院長（架空）</p>
+        <p>はじめまして。私自身、学生時代のケガをきっかけに身体のケアの大切さを実感し、この道に進みました。痛みやつらさは、我慢していても良いことがありません。「これくらいで行っていいのかな」という段階こそ、早く良くなるチャンスです。どうぞ気軽にご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2>よくあるご質問</h2>
+    <details>
+      <summary>どんな服装で行けばいいですか？</summary>
+      <p>動きやすい服装がおすすめですが、お仕事帰りの方向けにお着替え（無料）もご用意しています。</p>
+    </details>
+    <details>
+      <summary>1回で良くなりますか？</summary>
+      <p>状態によって異なります。初回の検査結果をもとに、必要な回数と期間の目安を正直にお伝えします。効果には個人差があります。</p>
+    </details>
+    <details>
+      <summary>健康保険は使えますか？</summary>
+      <p>整体は自由診療のため、健康保険は適用されません。料金はすべて税込表示で、追加費用はかかりません。</p>
+    </details>
+    <details>
+      <summary>予約なしでも行けますか？</summary>
+      <p>完全予約制のため、事前のご予約をお願いしています。当日予約も空きがあれば可能ですので、お電話でご確認ください。</p>
+    </details>
+  </div>
+</section>
+
+<section id="access" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">ACCESS</span>
+    <h2>院内・アクセス情報</h2>
+    <table class="info-table">
+      <tr><th>院名</th><td>ひばり整体院（架空）</td></tr>
+      <tr><th>所在地</th><td>東京都○○区○○ 2-3-4 ○○ビル 1F</td></tr>
+      <tr><th>アクセス</th><td>○○線「○○駅」南口より徒歩3分／駐車場2台あり</td></tr>
+      <tr><th>営業時間</th><td>平日 10:00〜21:00 ／ 土祝 9:00〜18:00（日曜定休）</td></tr>
+      <tr><th>電話</th><td>00-0000-0000</td></tr>
+    </table>
+    <div class="map-box">GOOGLE MAP</div>
+  </div>
+</section>
+
+<div class="cta">
+  <span class="eyebrow" style="background:var(--amber);color:var(--navy-deep)">RESERVATION</span>
+  <h2>初回体験 3,980円で<br>まず身体の状態を知ることから。</h2>
+  <p class="lead">「通うかどうか」はそのあとで大丈夫です。無理な勧誘はいたしません。</p>
+  <a class="cta-btn" href="#">Web予約する（24時間受付）</a>
+  <p class="tel">00-0000-0000<small>受付時間 9:00〜20:30（施術中は折り返します）</small></p>
+</div>
+
+<footer>© HIBARI SEITAI（本サイトは制作実績紹介のための架空サイトです）</footer>
+
+<div class="fixed-cta">
+  <a class="tel-a" href="tel:0000000000">📞 電話する</a>
+  <a class="web-a" href="#">Web予約（24時間）</a>
+</div>
+
+</body>
+</html>

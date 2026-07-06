@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大衆酒場 とまり木｜炭火と地酒、今夜のとまり木。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EDDC;
+  --red:#B7342B;
+  --red-deep:#93261F;
+  --green:#20402F;
+  --green-deep:#16301F;
+  --ink:#2A241C;
+  --ochre:#D9A441;
+  --paper:#FBF6EA;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  background:var(--cream);color:var(--ink);
+  line-height:1.9;font-size:15px;letter-spacing:.04em;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 20px;
+  background:rgba(245,237,220,.94);backdrop-filter:blur(6px);
+  border-bottom:2px solid var(--red);
+}
+.logo{font-family:'RocknRoll One',sans-serif;font-size:18px;color:var(--red);letter-spacing:.1em}
+.logo small{font-family:'Zen Kaku Gothic New',sans-serif;font-size:10px;color:var(--ink);display:block;letter-spacing:.24em}
+.header-hours{font-size:11px;color:var(--green);font-weight:700;text-align:right;line-height:1.5}
+
+/* hero */
+.hero{
+  padding:120px 0 0;text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 120%,rgba(217,164,65,.28),transparent 55%),
+    var(--cream);
+}
+.lantern{
+  width:86px;height:86px;margin:0 auto 18px;border-radius:50%;
+  background:radial-gradient(circle at 38% 32%,#E8604F,var(--red) 62%,var(--red-deep));
+  box-shadow:0 10px 30px rgba(183,52,43,.4);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--paper);font-family:'RocknRoll One',sans-serif;font-size:26px;
+  animation:sway 4.5s ease-in-out infinite;
+  transform-origin:top center;position:relative;
+}
+.lantern::before{
+  content:"";position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  width:2px;height:16px;background:var(--ink);
+}
+@keyframes sway{0%,100%{transform:rotate(-2.4deg)}50%{transform:rotate(2.4deg)}}
+.hero h1{
+  font-family:'RocknRoll One',sans-serif;
+  font-size:clamp(34px,9vw,56px);color:var(--ink);
+  letter-spacing:.14em;line-height:1.4;
+}
+.hero h1 span{color:var(--red)}
+.hero .tagline{
+  font-family:'Shippori Mincho',serif;font-size:clamp(14px,3.6vw,17px);
+  color:var(--green);letter-spacing:.3em;margin-top:10px;font-weight:700;
+}
+.hero .open-badge{
+  display:inline-block;margin-top:22px;
+  background:var(--green);color:var(--paper);
+  font-size:12px;font-weight:700;letter-spacing:.16em;
+  padding:7px 20px;border-radius:99px;
+}
+.hero-photo{
+  margin-top:40px;height:300px;
+  background:
+    radial-gradient(circle at 28% 38%,rgba(232,96,79,.5),transparent 45%),
+    radial-gradient(circle at 72% 62%,rgba(217,164,65,.45),transparent 50%),
+    linear-gradient(180deg,#4A3B2A,#241C12);
+  display:flex;align-items:flex-end;justify-content:center;
+  color:rgba(245,237,220,.55);font-size:12px;letter-spacing:.3em;padding-bottom:16px;
+}
+
+/* section base */
+section{padding:68px 0}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head .en{
+  font-family:'RocknRoll One',sans-serif;font-size:12px;
+  color:var(--ochre);letter-spacing:.34em;display:block;margin-bottom:8px;
+}
+h2{
+  font-family:'RocknRoll One',sans-serif;
+  font-size:clamp(22px,5.4vw,30px);color:var(--ink);
+  letter-spacing:.16em;line-height:1.5;
+}
+
+/* about */
+.about{background:var(--paper);border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
+.about-grid{display:grid;gap:22px}
+@media(min-width:720px){.about-grid{grid-template-columns:repeat(2,1fr)}}
+.about-item{display:flex;gap:16px;align-items:flex-start}
+.about-item .icon{
+  flex-shrink:0;width:52px;height:52px;border-radius:50%;
+  background:var(--red);color:var(--paper);
+  font-family:'Shippori Mincho',serif;font-size:20px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.about-item h3{font-size:16px;font-weight:700;color:var(--green-deep);margin-bottom:4px;letter-spacing:.06em}
+.about-item p{font-size:13.5px;color:#5a5346}
+
+/* tanzaku menu = signature */
+.menu{background:var(--green-deep);color:var(--paper);position:relative}
+.menu .sec-head .en{color:var(--ochre)}
+.menu h2{color:var(--paper)}
+.tanzaku-row{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.tanzaku{
+  writing-mode:vertical-rl;
+  background:var(--paper);color:var(--ink);
+  padding:20px 12px;min-height:210px;
+  font-family:'Shippori Mincho',serif;font-weight:700;
+  font-size:16px;letter-spacing:.2em;
+  border-radius:3px;
+  box-shadow:0 4px 10px rgba(0,0,0,.35);
+  display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+  transform:rotate(-.6deg);
+}
+.tanzaku:nth-child(2n){transform:rotate(.8deg)}
+.tanzaku:nth-child(3n){transform:rotate(-1.1deg)}
+.tanzaku .price{
+  font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;
+  font-size:13px;color:var(--red);letter-spacing:.08em;
+}
+.tanzaku.osusume{background:var(--red);color:var(--paper)}
+.tanzaku.osusume .price{color:var(--paper)}
+.tanzaku.osusume::before{
+  content:"本日のおすすめ";font-size:10px;letter-spacing:.2em;
+  color:var(--ochre);margin-bottom:8px;font-family:'Zen Kaku Gothic New',sans-serif;
+}
+.menu-note{text-align:center;font-size:12px;color:#B9C7BB;margin-top:26px}
+
+/* drinks */
+.drink-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:720px){.drink-grid{grid-template-columns:repeat(4,1fr)}}
+.drink{
+  background:var(--paper);border:1.5px solid var(--green);border-radius:8px;
+  padding:18px 14px;text-align:center;
+}
+.drink h3{font-family:'Shippori Mincho',serif;font-size:15px;color:var(--green-deep);letter-spacing:.1em;margin-bottom:4px}
+.drink p{font-size:12px;color:#5a5346;line-height:1.7}
+.drink .p{font-weight:700;color:var(--red);font-size:13px;margin-top:6px}
+
+/* course */
+.course{background:var(--paper);border-top:2px solid var(--green);border-bottom:2px solid var(--green)}
+.course-card{
+  max-width:560px;margin:0 auto;background:var(--cream);
+  border:2px dashed var(--red);border-radius:10px;padding:28px 22px;text-align:center;
+}
+.course-card .name{font-family:'RocknRoll One',sans-serif;font-size:19px;color:var(--red);letter-spacing:.12em;margin-bottom:6px}
+.course-card .price{font-family:'Shippori Mincho',serif;font-size:26px;font-weight:700;color:var(--ink)}
+.course-card .price small{font-size:12px;font-family:'Zen Kaku Gothic New',sans-serif;color:#5a5346}
+.course-card p{font-size:13px;color:#5a5346;margin-top:10px}
+.course-card .note{font-size:11px;margin-top:14px;color:#8a8172}
+
+/* photos */
+.photo-grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:720px){.photo-grid{grid-template-columns:repeat(4,1fr)}}
+.ph{
+  height:150px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(245,237,220,.6);font-size:11px;letter-spacing:.2em;
+}
+.ph1{background:linear-gradient(160deg,#7A4A2B,#3C2414)}
+.ph2{background:linear-gradient(160deg,#8A6A32,#4A3618)}
+.ph3{background:linear-gradient(160deg,#5C6E4A,#2C3A22)}
+.ph4{background:linear-gradient(160deg,#9C4A3A,#4E2018)}
+
+/* info */
+.info-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper);border-radius:8px;overflow:hidden}
+.info-table th,.info-table td{padding:14px;border-bottom:1px solid #E4DAC4;text-align:left;vertical-align:top}
+.info-table th{width:100px;color:var(--red);font-weight:700;white-space:nowrap;background:#F1E7D2}
+.map-box{margin-top:18px;height:190px;background:#E8DFC9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#8a8172;letter-spacing:.2em}
+
+/* insta */
+.insta{
+  text-align:center;background:var(--paper);
+  border-top:2px solid var(--red);
+}
+.insta p{font-size:13.5px;color:#5a5346;margin-bottom:18px}
+.insta-btn{
+  display:inline-block;border:2px solid var(--green);color:var(--green-deep);
+  font-weight:700;font-size:14px;letter-spacing:.1em;
+  padding:13px 34px;border-radius:99px;transition:background .2s,color .2s;
+}
+.insta-btn:hover{background:var(--green);color:var(--paper)}
+.insta-btn:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+
+/* cta */
+.cta{
+  background:var(--red);color:var(--paper);text-align:center;padding:72px 20px;
+  position:relative;overflow:hidden;
+}
+.cta::before,.cta::after{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.cta::before{top:-80px;left:-60px}
+.cta::after{bottom:-90px;right:-70px}
+.cta h2{color:var(--paper);margin-bottom:10px}
+.cta .sec-head{margin-bottom:16px}
+.cta .sec-head .en{color:var(--ochre)}
+.cta p{font-size:14px;color:#F3D9CE;margin-bottom:26px;position:relative}
+.cta-btn{
+  display:inline-block;background:var(--paper);color:var(--red);
+  font-family:'RocknRoll One',sans-serif;font-size:16px;letter-spacing:.1em;
+  padding:16px 46px;border-radius:99px;position:relative;
+  box-shadow:0 5px 0 rgba(0,0,0,.2);transition:transform .15s,box-shadow .15s;
+}
+.cta-btn:hover{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.2)}
+.cta-btn:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+.cta .tel{margin-top:22px;font-family:'Shippori Mincho',serif;font-size:24px;font-weight:700;letter-spacing:.08em;position:relative}
+.cta .tel small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:11px;color:#F3D9CE}
+
+/* fixed cta */
+.fixed-cta{position:fixed;bottom:0;left:0;right:0;z-index:60;display:flex;box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+.fixed-cta a{flex:1;text-align:center;padding:15px 8px;font-size:13.5px;font-weight:700;letter-spacing:.08em}
+.fixed-cta .tel-a{background:var(--green-deep);color:var(--paper)}
+.fixed-cta .web-a{background:var(--red);color:var(--paper)}
+@media(min-width:720px){.fixed-cta{display:none}}
+
+footer{background:var(--ink);color:#B0A793;font-size:11px;text-align:center;padding:24px 20px 92px;letter-spacing:.12em}
+@media(min-width:720px){footer{padding-bottom:24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">大衆酒場 とまり木<small>TOMARIGI</small></div>
+  <div class="header-hours">17:00–24:00<br>月曜定休</div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="lantern" aria-hidden="true">酒</div>
+    <h1>今夜の<span>とまり木</span>、<br>見つけた。</h1>
+    <p class="tagline">炭火焼きと地酒の店</p>
+    <span class="open-badge">○○駅 北口 徒歩1分｜本日空席あり</span>
+  </div>
+  <div class="hero-photo">店内・料理メイン写真</div>
+</div>
+
+<section class="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">ABOUT</span>
+      <h2>とまり木の、こだわり</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-item">
+        <div class="icon">炭</div>
+        <div>
+          <h3>備長炭で、じっくり焼く</h3>
+          <p>名物の炭火焼きは、注文を受けてから一本ずつ。皮はパリッと、中はふっくら。ビールが進む香ばしさです。</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="icon">酒</div>
+        <div>
+          <h3>店主が惚れた地酒、常時20種</h3>
+          <p>全国の蔵から店主が選ぶ日本酒を、季節替わりで。「今日のおすすめ」は黒板をご覧ください。</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="icon">魚</div>
+        <div>
+          <h3>市場直送の鮮魚</h3>
+          <p>毎朝仕入れる鮮魚のお刺身と、日替わりの煮付け。その日のいいものだけをお出しします。</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="icon">席</div>
+        <div>
+          <h3>一人でも、大勢でも</h3>
+          <p>カウンター8席、テーブル、最大20名の掘りごたつ個室。仕事帰りの一杯から宴会までどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">MENU</span>
+      <h2>壁の短冊から、お好きにどうぞ</h2>
+    </div>
+    <div class="tanzaku-row">
+      <div class="tanzaku osusume">炙りしめ鯖<span class="price">780円</span></div>
+      <div class="tanzaku">炭火焼き五本盛り<span class="price">980円</span></div>
+      <div class="tanzaku">刺身三点盛り<span class="price">1,280円</span></div>
+      <div class="tanzaku">自家製ポテサラ<span class="price">480円</span></div>
+      <div class="tanzaku">出汁巻き玉子<span class="price">580円</span></div>
+      <div class="tanzaku">〆の鯛茶漬け<span class="price">880円</span></div>
+    </div>
+    <p class="menu-note">※価格はすべて税込。仕入れにより内容が変わります。ぜんぶで約60品。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">DRINKS</span>
+      <h2>お酒のこと</h2>
+    </div>
+    <div class="drink-grid">
+      <div class="drink"><h3>生ビール</h3><p>キンキンのジョッキで</p><p class="p">550円</p></div>
+      <div class="drink"><h3>日本酒</h3><p>季節の地酒 常時20種</p><p class="p">半合 480円〜</p></div>
+      <div class="drink"><h3>レモンサワー</h3><p>凍結レモン丸ごと一個</p><p class="p">520円</p></div>
+      <div class="drink"><h3>ソフトドリンク</h3><p>お茶・ジュース各種</p><p class="p">300円</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="course">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">PARTY</span>
+      <h2>宴会は、おまかせコースで</h2>
+    </div>
+    <div class="course-card">
+      <p class="name">とまり木コース（全7品）</p>
+      <p class="price">4,500円<small>／名（税込・2時間飲み放題付き）</small></p>
+      <p>刺身盛り・名物の炭火焼き・季節の一品・〆の鯛茶漬けまで。人数とご予算に応じてご相談も承ります。</p>
+      <p class="note">※4名様より前日までのご予約制／最大20名の掘りごたつ個室あり</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">PHOTO</span>
+      <h2>店の空気、すこしだけ</h2>
+    </div>
+    <div class="photo-grid">
+      <div class="ph ph1">炭火焼き写真</div>
+      <div class="ph ph2">地酒写真</div>
+      <div class="ph ph3">カウンター写真</div>
+      <div class="ph ph4">個室写真</div>
+    </div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">INSTAGRAM</span>
+      <h2>本日のおすすめは、インスタで</h2>
+    </div>
+    <p>その日の仕入れと日本酒の入荷情報を、毎日夕方に投稿しています。</p>
+    <a class="insta-btn" href="#">@tomarigi_sakaba をフォロー</a>
+  </div>
+</section>
+
+<section id="access" style="padding-top:52px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">ACCESS</span>
+      <h2>店舗情報</h2>
+    </div>
+    <table class="info-table">
+      <tr><th>店名</th><td>大衆酒場 とまり木（架空）</td></tr>
+      <tr><th>所在地</th><td>東京都○○区○○ 3-4-5（○○駅北口 徒歩1分）</td></tr>
+      <tr><th>営業時間</th><td>17:00〜24:00（L.O. 23:15）／月曜定休</td></tr>
+      <tr><th>席数</th><td>カウンター8席・テーブル16席・個室（最大20名）</td></tr>
+      <tr><th>電話</th><td>00-0000-0000</td></tr>
+      <tr><th>支払い</th><td>現金・各種カード・QRコード決済</td></tr>
+    </table>
+    <div class="map-box">GOOGLE MAP</div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="sec-head">
+    <span class="en">RESERVATION</span>
+    <h2>今夜、寄ってきませんか。</h2>
+  </div>
+  <p>お席のご予約はWebから24時間受付。当日はお電話が確実です。</p>
+  <a class="cta-btn" href="#">席を予約する</a>
+  <p class="tel">00-0000-0000<small>受付 15:00〜23:00</small></p>
+</div>
+
+<footer>© TAISHU-SAKABA TOMARIGI（本サイトは制作実績紹介のための架空サイトです）</footer>
+
+<div class="fixed-cta">
+  <a class="tel-a" href="tel:0000000000">📞 電話で予約</a>
+  <a class="web-a" href="#">Webで席を予約</a>
+</div>
+
+</body>
+</html>
